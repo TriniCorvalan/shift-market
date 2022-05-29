@@ -1,1 +1,4 @@
-h1 Home 
+.container.m-5
+  h1 Home
+  p = link_to "Iniciar Sesión", new_user_session_path
+  p = link_to "Cerrar sesión", destroy_user_session_path, method: 'delete'
