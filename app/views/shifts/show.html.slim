@@ -1,0 +1,14 @@
+p#notice = notice
+
+.container
+
+  p Turno de Chat
+
+  .shifts 
+    span Cuándo:  
+    strong = @shift.date
+  br
+  .actions
+    p = link_to 'Subastar', new_shift_auction_path(shift_id: @shift.id)
+
+    p = link_to 'Volver', shifts_path
