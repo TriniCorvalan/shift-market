@@ -4,8 +4,12 @@ Rails.application.routes.draw do
   devise_for :users
   get 'home/index'
   resources :shifts, except: %i[new create] do
-    resources :auctions, only: %i[new edit destroy]
+    resources :auctions, only: %i[new edit]
   end
 
-  resources :auctions, only: %i[index show update create]
+  resources :auctions, only: %i[index show update create] do
+    resources :bids, only: %i[new edit]
+  end
+
+  resources :bids, only: %i[index create update]
 end

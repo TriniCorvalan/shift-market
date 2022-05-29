@@ -7,4 +7,12 @@ class Shift < ApplicationRecord
   def date
     "#{start.strftime("%d-%m %H:%M")} a #{self.end.strftime("%H:%M")}"
   end
+
+  def self.options_for_select
+    options = []
+    self.all.each do |shift| 
+      options << [shift.date, shift.id]
+    end
+    options
+  end
 end

@@ -1,0 +1,17 @@
+
+= form_with(model: bid, local: true) do |form|
+  - if bid.errors.any?
+    #error_explanation
+      h2 = pluralize(bid.errors.count, "error") + " prohibited this bid from being saved:"
+
+      ul
+        = bid.errors.full_messages.each do |message|
+          li = message
+
+
+  = form.hidden_field :bidder_id, value: current_user.id 
+  = form.hidden_field :auction_id, value: @auction.id
+  = form.select :shif_id, options_for_select(@shifts)
+
+  .actions
+    = form.submit

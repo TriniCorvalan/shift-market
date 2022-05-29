@@ -1,0 +1,23 @@
+.container
+  h1 Bids
+
+  table
+    thead
+      tr
+        th Cuál pido 
+        th Cuál ofrezco
+        th A quién
+        th Qué ofrece
+        th Qué pido
+        th colspan="3"
+
+
+    tbody
+      - @bids.each do |bid|
+        tr
+          td = bid.auction.date
+          td = bid.shift.date
+          td = bid.auction.bidder.name
+          td = bid.auction.description
+          td = bid.description
+          / td = link_to 'Editar', edit_bid_path(bid)
