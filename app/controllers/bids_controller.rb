@@ -6,6 +6,17 @@ class BidsController < ApplicationController
     @bids = current_user.bids
   end
 
+  def accept
+    @bid = Bid.find(params[:bid_id])
+    @auction = @bid.auction
+    shift_1 = @auction.shift
+    user_1 = shift_1.user_id
+    shift_2 = @bid.shift
+    user_2 = shift_2.user_id
+    shift_1.update(user_id: user_2)
+    shift_2.update(user_id: user_1)
+    redirect_to auctions_path, notice: "Cambio realizado"
+  end
   # # GET /bids/1 or /bids/1.json
   # def show
   # end
