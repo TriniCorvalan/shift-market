@@ -5,4 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :shifts, dependent: :destroy
+  has_many :auctions, through: :shifts
 end
