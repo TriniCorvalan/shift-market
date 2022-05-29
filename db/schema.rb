@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_29_051738) do
+ActiveRecord::Schema.define(version: 2022_05_29_054455) do
 
   create_table "auctions", force: :cascade do |t|
     t.integer "shift_id", null: false
@@ -20,6 +20,19 @@ ActiveRecord::Schema.define(version: 2022_05_29_051738) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["shift_id"], name: "index_auctions_on_shift_id"
+  end
+
+  create_table "bids", force: :cascade do |t|
+    t.integer "auction_id", null: false
+    t.integer "shift_id", null: false
+    t.integer "bidder_id", null: false
+    t.integer "status"
+    t.string "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["auction_id"], name: "index_bids_on_auction_id"
+    t.index ["bidder_id"], name: "index_bids_on_bidder_id"
+    t.index ["shift_id"], name: "index_bids_on_shift_id"
   end
 
   create_table "shifts", force: :cascade do |t|
@@ -47,5 +60,8 @@ ActiveRecord::Schema.define(version: 2022_05_29_051738) do
   end
 
   add_foreign_key "auctions", "shifts"
+  add_foreign_key "bids", "auctions"
+  add_foreign_key "bids", "shifts"
+  add_foreign_key "bids", "users", column: "bidder_id"
   add_foreign_key "shifts", "users"
 end

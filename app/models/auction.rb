@@ -1,6 +1,7 @@
 class Auction < ApplicationRecord
   belongs_to :shift
   has_one :user, through: :shift
+  has_many :bids, dependent: :destroy
 
   enum status: {
     pending: 0,
