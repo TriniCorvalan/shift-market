@@ -1,6 +1,5 @@
 class Auction < ApplicationRecord
   belongs_to :shift
-  has_one :user, through: :shift
   has_many :bids, dependent: :destroy
 
   enum status: {
@@ -10,4 +9,13 @@ class Auction < ApplicationRecord
   }
 
   validates :price, numericality: { in: (1...5) }
+  accepts_nested_attributes_for :shift
+
+  def bidder
+    shift.user
+  end
+
+  def date
+    "#{shift.start.strftime("%d-%m %H:%M")} a #{shift.end.strftime("%H:%M")}"
+  end
 end

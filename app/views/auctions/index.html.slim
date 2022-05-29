@@ -1,0 +1,17 @@
+.container
+  h1 Subastas
+
+  table
+    thead
+      tr
+        th Oferente
+        th Fecha
+        th colspan="3"
+    tbody
+      - @auctions.each do |auction|
+        tr
+          td = auction.bidder.name
+          td = auction.date
+          td = link_to 'Ver', auction
+
+br

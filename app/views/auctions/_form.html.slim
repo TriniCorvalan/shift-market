@@ -1,0 +1,22 @@
+.container
+  = form_with(model: auction, local: true) do |form|
+    - if auction.errors.any?
+      #error_explanation
+        h2 = pluralize(auction.errors.count, "error") + " prohibited this auction from being saved"
+
+        ul
+          - auction.errors.full_messages.each do |message|
+            li
+              = message
+    .price
+      p = form.label :price, "prioridad"
+      p = form.number_field :price, in: 1..5, step: 1
+
+    .description
+      p = form.label :description, "qué ofreces:"
+      p = form.text_field :description
+
+    = form.hidden_field  :shift_id, value: @shift
+
+    .actions
+      .btn = form.submit
