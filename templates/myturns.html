@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles.css"></link>
+    <title>Florida's Chat Market- Tus Turnos</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="index.html">Chat Market</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 w-100">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Market Place</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="ofrecer.html">Ofrecer</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="tussubastas.html">Tus Subastas</a>
+              </li>
+              <li class="nav-item dropdown" style="margin-left: auto;">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Juan 
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="#">Cerrar Sesión</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    <div class="container">
+        <div class="row py-5">
+            <h1 class="text-center">Estos Son Tus Proximos Turnos</h1>
+            <p class="text-muted text-center">Selecciona Un Turno Para Cambiar</p>
+        </div> 
+        <div class="month-container">
+            <h2 class="mb-3">Este mes:</h2>
+            <ul class="row">
+                <li class="col-12 col-md-6 col-lg-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-title">1 junio</h3>
+                            <h4 class="card-subtitle text-muted">15:00 - 15:45</h4>
+                            <button class="btn btn-primary mt-4" data-bs-target="#turnModal" data-bs-toggle="modal" onclick="insertToModal('1 junio', '15:00 - 15:45', 'STGHFGDFHSDGHFGSD')">Cambiar</button>
+                        </div>
+                    </div>
+                </li>
+                <li class="col-12 col-md-6 col-lg-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-title">8 junio</h3>
+                            <h4 class="card-subtitle text-muted">10:00 - 10:45</h4>
+                            <button class="btn btn-primary mt-4">Cambiar</button>
+                        </div>
+                    </div>
+                </li>
+                <li class="col-12 col-md-6 col-lg-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-title">12 junio</h3>
+                            <h4 class="card-subtitle text-muted">12:00 - 12:45</h4>
+                            <button class="btn btn-primary mt-4">Cambiar</button>
+                        </div>
+                    </div>
+                </li>
+                <li class="col-12 col-md-6 col-lg-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-title">22 junio</h3>
+                            <h4 class="card-subtitle text-muted">12:45- 13:30</h4>
+                            <button class="btn btn-primary mt-4">Cambiar</button>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="month-container">
+            <h2 class="mb-3">Julio:</h2>
+            <ul class="row">
+                <li class="col-12 col-md-6 col-lg-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-title">1 julio</h3>
+                            <h4 class="card-subtitle text-muted">15:00 - 15:45</h4>
+                            <button class="btn btn-primary mt-4">Cambiar</button>
+                        </div>
+                    </div>
+                </li>
+                <li class="col-12 col-md-6 col-lg-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-title">8 julio</h3>
+                            <h4 class="card-subtitle text-muted">10:00 - 10:45</h4>
+                            <button class="btn btn-primary mt-4">Cambiar</button>
+                        </div>
+                    </div>
+                </li>
+                <li class="col-12 col-md-6 col-lg-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-title">12 julio</h3>
+                            <h4 class="card-subtitle text-muted">12:00 - 12:45</h4>
+                            <button class="btn btn-primary mt-4">Cambiar</button>
+                        </div>
+                    </div>
+                </li>
+                <li class="col-12 col-md-6 col-lg-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-title">22 julio</h3>
+                            <h4 class="card-subtitle text-muted">12:45- 13:30</h4>
+                            <button class="btn btn-primary mt-4">Cambiar</button>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="modal fade" id="turnModal" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="modalLabel">Detalles de tu Cambio</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <h3 class="card-title">12 julio</h3>
+                <h4 class="card-subtitle text-muted">12:00 - 12:45</h4>
+              <form action="">
+                  <input type="hidden" id="eventId" name="eventId"  value="">
+                  <label for="infoAdicional" class="text-muted mt-4">¿Quieres pedir algo más?</label>
+                  <textarea class="form-control mt-2" name="infoAdicional" id="infoAdicional" cols="30" rows="3"></textarea>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+              <a href="index.html" class="btn btn-success">Confirmar</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script src="turn-modal.js"></script>
+</body>
+</html>
