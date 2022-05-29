@@ -16,7 +16,7 @@
       p = form.label :description, "qué ofreces:"
       p = form.text_field :description
 
-    = form.hidden_field  :shift_id, value: @shift
+    = form.hidden_field  :shift_id, value: @shift.id
 
     .actions
-      .btn = form.submit
+      .btn = form.submit 'Subastar'

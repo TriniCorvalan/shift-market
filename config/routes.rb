@@ -11,5 +11,7 @@ Rails.application.routes.draw do
     resources :bids, only: %i[new edit]
   end
 
-  resources :bids, only: %i[index create update]
+  resources :bids, only: %i[index create update] do
+    get 'accept'
+  end
 end
