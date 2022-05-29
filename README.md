@@ -1,24 +1,15 @@
-# README
+# SHIFT MARKET
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Este proyecto fue desarrollado en el contexto de la hackatón durante el proceso de preselección para Fintual Intensivo en Natales.
 
-Things you may want to cover:
+[Descripción del desafío](https://chileconvalley.notion.site/The-Chat-Market-96ef7cbe8fa341d2a0552ab9aad66d19)
 
-* Ruby version
+Shift market es un mercado de subasta de turnos. 
+Un usuario podrá ver sus turnos y si subastarlos si lo desea.
+Al subastar el turno seleccionado, se podrá ofrecer algo a cambio para incentivar a su compra.
+Los demás usuarios podrá ver los turnos en subasta y ofrecerse a cambiarlos por uno de sus propios turnos y si el incentivo no les parece, podrán acotar un ajuste.
+Quien subastó el turno revisará los turno que llegan en oferta y aceptará el cambio de la que oferta que prefiera.
 
-* System dependencies
+Idealmente al concretarse la oferta, el evento (en Google Calendar) asociado a cada turno cambiar las personas asignadas según corresponda, actualizando los horarios de cada usuario.
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Actualmente el proyecto se encuentra en etapa de desarrollo (rama develop) con las funcionalidades en Ruby on Rails (desarrolladas por [TriniCorvalan](https://github.com/TriniCorvalan/)) y las templates de front están en la carpeta templates (desarrolladas por [JoseAldunate](https://github.com/JoseAldunate)) y un pitch de presentación preparado por [LoreAnavia](lorena.anavia@gmail.com). La solución en sí fue ideada por el equipo Florida (Lore, Jose y Trini)
