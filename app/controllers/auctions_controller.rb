@@ -8,6 +8,7 @@ class AuctionsController < ApplicationController
 
   # GET /auctions/1 or /auctions/1.json
   def show
+    @bids = @auction.bids
   end
 
   # GET /auctions/new
@@ -16,9 +17,9 @@ class AuctionsController < ApplicationController
     @shift = Shift.find(params[:shift_id])
   end
 
-  # GET /auctions/1/edit
-  def edit
-  end
+  # # GET /auctions/1/edit
+  # def edit
+  # end
 
   # POST /auctions or /auctions.json
   def create
@@ -35,28 +36,28 @@ class AuctionsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /auctions/1 or /auctions/1.json
-  def update
-    respond_to do |format|
-      if @auction.update(auction_params)
-        format.html { redirect_to auction_url(@auction), notice: "Auction was successfully updated." }
-        format.json { render :show, status: :ok, location: @auction }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @auction.errors, status: :unprocessable_entity }
-      end
-    end
-  end
+  # # PATCH/PUT /auctions/1 or /auctions/1.json
+  # def update
+  #   respond_to do |format|
+  #     if @auction.update(auction_params)
+  #       format.html { redirect_to auction_url(@auction), notice: "Auction was successfully updated." }
+  #       format.json { render :show, status: :ok, location: @auction }
+  #     else
+  #       format.html { render :edit, status: :unprocessable_entity }
+  #       format.json { render json: @auction.errors, status: :unprocessable_entity }
+  #     end
+  #   end
+  # end
 
-  # DELETE /auctions/1 or /auctions/1.json
-  def destroy
-    @auction.destroy
+  # # DELETE /auctions/1 or /auctions/1.json
+  # def destroy
+  #   @auction.destroy
 
-    respond_to do |format|
-      format.html { redirect_to auctions_url, notice: "Auction was successfully destroyed." }
-      format.json { head :no_content }
-    end
-  end
+  #   respond_to do |format|
+  #     format.html { redirect_to auctions_url, notice: "Auction was successfully destroyed." }
+  #     format.json { head :no_content }
+  #   end
+  # end
 
   private
     # Use callbacks to share common setup or constraints between actions.

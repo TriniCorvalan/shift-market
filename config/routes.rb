@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   devise_for :users
   get 'home/index'
-  resources :shifts do
+  resources :shifts, except: %i[new create] do
     resources :auctions, only: %i[new edit destroy]
   end
 
