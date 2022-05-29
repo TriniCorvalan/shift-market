@@ -1,4 +1,8 @@
 .container.m-5
   h1 Home
-  p = link_to "Iniciar Sesión", new_user_session_path
-  p = link_to "Cerrar sesión", destroy_user_session_path, method: 'delete'
+  - if signed_in?
+    p = link_to "Subastas", auctions_path
+    p = link_to "Turnos de Chat", shifts_path
+    p = link_to "Cerrar sesión", destroy_user_session_path, method: 'delete'
+  - else
+    p = link_to "Iniciar Sesión", new_user_session_path

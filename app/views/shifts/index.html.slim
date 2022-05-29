@@ -1,15 +1,18 @@
-h1 Turnos de Chat
+.container
+  h1 Turnos de Chat
 
-table
-  thead
-    tr
-      th Cuándo
-      th colspan="2" Acciones
-
-  tbody
-    - @shifts.each do |shift|
+  table
+    thead
       tr
-        td = shift.date
-        - if shift.user_id == current_user.id
-          td = link_to 'Ver  ', shift
-          td = link_to 'Subastar  ', new_shift_auction_path(shift_id: shift.id)
+        th Cuándo
+        th Quién
+        th colspan="2" Acciones
+
+    tbody
+      - @shifts.each do |shift|
+        tr
+          td = shift.date
+          td = shift.user.name
+          - if shift.user_id == current_user.id
+            td = link_to 'Ver  ', shift
+            td = link_to 'Subastar  ', new_shift_auction_path(shift_id: shift.id)
