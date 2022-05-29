@@ -1,0 +1,7 @@
+.container
+  h1 Editar subasta
+
+  = render 'form', auction: @auction
+
+  p = link_to 'Ver subasta', @auction 
+  p = link_to 'ver otras subastas', auctions_path
