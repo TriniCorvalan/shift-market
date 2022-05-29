@@ -17,13 +17,13 @@ class BidsController < ApplicationController
     @bid = @auction.bids.build
   end
 
-  # GET /bids/1/edit
-  def edit
-  end
+  # # GET /bids/1/edit
+  # def edit
+  # end
 
   # POST /bids or /bids.json
   def create
-    @bid = @auction.bids.build(bid_params)
+    @bid =  Bid.new(bid_params)
     @bid.bidder_id = current_user.id
 
     respond_to do |format|

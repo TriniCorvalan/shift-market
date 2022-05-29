@@ -2,10 +2,10 @@
   h1 Subasta 
 
   p 
-    span Fecha
+    span Cuándo  
     strong = @auction.date
   
-  - if @bids.any?
+  - if @auction.bidder == current_user && @bids.any?
     ul
       - @bids.each do |bid|
         li 
