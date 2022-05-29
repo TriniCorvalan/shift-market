@@ -6,5 +6,5 @@ class User < ApplicationRecord
 
   has_many :shifts, dependent: :destroy
   has_many :auctions, through: :shifts
-  has_many :bids, dependent: :destroy, foreign_key: :user_id
+  has_many :bids, dependent: :destroy, foreign_key: :bidder_id
 end

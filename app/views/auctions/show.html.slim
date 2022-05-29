@@ -2,23 +2,26 @@
   h1 Subasta 
 
   p 
-    p Fecha
+    span Fecha
     strong = @auction.date
   
   - if @bids.any?
-  ul
-    - @bids.each do |bid|
-      li 
-        p oferta de:
-        .
-          span Quién 
-          strong = bid.bidder.name
-        .
-          span Cuándo 
-          strong = bid.date 
-        .
-          span Pero...  
-          span =< bid.description
+    ul
+      - @bids.each do |bid|
+        li 
+          p oferta de:
+          .
+            span Quién 
+            strong = bid.bidder.name
+          .
+            span Cuándo 
+            strong = bid.date 
+          .
+            span Pero...  
+            span =< bid.description
+
+  - else
+    = link_to 'Ofrecer cambio', new_auction_bid_path(@auction.id)
 
     / p = link_to 'Aceptar', accept_bid_path(@bid)
     / p = link_to 'Rechazar', decline_bid_path(@bid)
